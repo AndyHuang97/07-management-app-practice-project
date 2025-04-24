@@ -1,4 +1,5 @@
 import NewProject from "./components/NewProject";
+import NoProjectSelected from "./components/NoProjectSelect";
 import ProjectsSidebar from "./components/ProjectsSidebar";
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
     // flex -> allows to place children elements horizontally instead of stacking them vertically
     <main className="h-screen my-8 flex gap-8"> 
       <ProjectsSidebar/>
-      <NewProject/>
+      <NoProjectSelected/>
     </main>
   );
 }
