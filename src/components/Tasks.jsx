@@ -17,7 +17,7 @@ export default function Tasks({ tasks, onAdd, onDelete }) {
               <span>{task.text}</span>
               <button
                 className="text-stone-700 hover:text-red-500"
-                onClick={onDelete}
+                onClick={() => onDelete(task.id)}
               >
                 Clear
               </button>
