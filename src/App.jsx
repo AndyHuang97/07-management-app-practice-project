@@ -21,13 +21,15 @@ function App() {
 
   function handleAddProject(projectData) {
     setProjectState((prevState) => {
+      const projectId = Math.random();
       const newProject = {
         ...projectData,
-        id: Math.random(),
+        id: projectId,
       };
 
       return {
         ...prevState,
+        selectedProjectId: undefined, // on save go back to unselected state
         projects: [...prevState.projects, newProject],
       };
     });
@@ -46,7 +48,10 @@ function App() {
   return (
     // flex -> allows to place children elements horizontally instead of stacking them vertically
     <main className="h-screen my-8 flex gap-8">
-      <ProjectsSidebar onStartAddProject={handleStartAddProject} />
+      <ProjectsSidebar
+        onStartAddProject={handleStartAddProject}
+        projects={projectState.projects}
+      />
       {content}
     </main>
   );
