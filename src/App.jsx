@@ -33,7 +33,7 @@ function App() {
     });
   }
 
-  console.log(projectState);
+  console.log(`projectState: ${JSON.stringify(projectState)}`);
 
   let content;
 
